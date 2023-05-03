@@ -3,7 +3,7 @@ package org.chobit.commons.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.chobit.commons.enums.CheckableType;
+import org.chobit.commons.contract.CheckableType;
 
 /**
  * 整体检查验证

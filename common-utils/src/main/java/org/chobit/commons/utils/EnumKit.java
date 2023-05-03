@@ -1,8 +1,8 @@
 package org.chobit.commons.utils;
 
 
-import org.chobit.commons.enums.CodeDescEnum;
-import org.chobit.commons.enums.CodeEnum;
+import org.chobit.commons.contract.CodeDescEnum;
+import org.chobit.commons.contract.CodeEnum;
 
 /**
  * 枚举工具类

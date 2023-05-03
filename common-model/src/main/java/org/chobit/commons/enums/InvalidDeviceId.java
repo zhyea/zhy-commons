@@ -1,4 +1,4 @@
-package org.chobit.commons.constans;
+package org.chobit.commons.enums;
 
 /**
  * @author zhangrui137

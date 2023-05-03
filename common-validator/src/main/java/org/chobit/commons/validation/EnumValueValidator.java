@@ -3,7 +3,7 @@ package org.chobit.commons.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.chobit.commons.enums.CodeEnum;
+import org.chobit.commons.contract.CodeEnum;
 import org.chobit.commons.utils.EnumKit;
 
 /**

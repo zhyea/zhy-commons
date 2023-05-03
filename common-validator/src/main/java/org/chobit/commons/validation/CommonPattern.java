@@ -2,7 +2,7 @@ package org.chobit.commons.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-import org.chobit.commons.constans.CommonRegexPattern;
+import org.chobit.commons.enums.CommonRegexPattern;
 
 import java.lang.annotation.*;
 

@@ -1,4 +1,4 @@
-package org.chobit.commons.enums;
+package org.chobit.commons.contract;
 
 /**
  * 枚举需要返回code和描述时可以继承此类

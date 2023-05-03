@@ -1,4 +1,4 @@
-package org.chobit.commons.enums;
+package org.chobit.commons.contract;
 
 import org.chobit.commons.exception.ParamException;
 

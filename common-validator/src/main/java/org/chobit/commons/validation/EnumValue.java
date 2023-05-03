@@ -2,7 +2,7 @@ package org.chobit.commons.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-import org.chobit.commons.enums.CodeEnum;
+import org.chobit.commons.contract.CodeEnum;
 
 import java.lang.annotation.*;
 

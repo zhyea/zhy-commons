@@ -3,7 +3,7 @@ package org.chobit.commons.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.chobit.commons.constans.CommonRegexPattern;
+import org.chobit.commons.enums.CommonRegexPattern;
 
 /**
  * @author robin

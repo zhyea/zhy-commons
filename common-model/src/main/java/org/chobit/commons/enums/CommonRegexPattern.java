@@ -1,4 +1,4 @@
-package org.chobit.commons.constans;
+package org.chobit.commons.enums;
 
 import java.util.regex.Pattern;
 
