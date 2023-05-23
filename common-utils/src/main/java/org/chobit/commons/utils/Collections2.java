@@ -40,6 +40,7 @@ public final class Collections2 {
      * @param <T>      列表元素类型
      * @return 新建的列表
      */
+    @SafeVarargs
     public static <T> List<T> listOf(T... elements) {
         List<T> list = new LinkedList<>();
         if (null == elements) {
