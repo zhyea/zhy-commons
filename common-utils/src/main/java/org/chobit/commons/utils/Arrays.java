@@ -3,7 +3,7 @@ package org.chobit.commons.utils;
 /**
  * 数组操作工具
  *
- * @author rui.zhang
+ * @author robin
  */
 public final class Arrays {
 

@@ -2,6 +2,8 @@ package org.chobit.commons.utils;
 
 /**
  * 通用转换处理工具
+ *
+ * @author robin
  */
 public final class Convert {
 

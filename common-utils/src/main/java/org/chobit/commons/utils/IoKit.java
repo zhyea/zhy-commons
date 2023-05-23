@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 
 /**
  * IO操作类
+ *
+ * @author robin
  */
 public final class IoKit {
 

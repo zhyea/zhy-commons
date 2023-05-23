@@ -52,11 +52,11 @@ public final class LocalDateKit {
     /**
      * 按指定格式格式化时间
      *
-     * @param pattern  时间格式
      * @param dateTime 时间对象
+     * @param pattern  时间格式
      * @return 格式化后的时间字符串
      */
-    public static String formatTime(String pattern, LocalDateTime dateTime) {
+    public static String formatTime(LocalDateTime dateTime, String pattern) {
         return DateTimeFormatter.ofPattern(pattern).format(dateTime);
     }
 
@@ -75,11 +75,11 @@ public final class LocalDateKit {
     /**
      * 按指定格式解析日期时间
      *
-     * @param pattern  日期时间格式
      * @param dateTime 日期时间字符串
+     * @param pattern  日期时间格式
      * @return LocalDateTime实例
      */
-    public static LocalDateTime parseTime(String pattern, String dateTime) {
+    public static LocalDateTime parseTime(String dateTime, String pattern) {
         return LocalDateTime.parse(dateTime, DateTimeFormatter.ofPattern(pattern));
     }
 
@@ -98,11 +98,11 @@ public final class LocalDateKit {
     /**
      * 按指定格式格式化日期实例
      *
-     * @param pattern 日期格式
      * @param date    日期实例
+     * @param pattern 日期格式
      * @return 格式化后的日期实例
      */
-    public static String formatDate(String pattern, LocalDate date) {
+    public static String formatDate(LocalDate date, String pattern) {
         return DateTimeFormatter.ofPattern(pattern).format(date);
     }
 
@@ -121,11 +121,11 @@ public final class LocalDateKit {
     /**
      * 根据指定格式解析日期字符串
      *
-     * @param pattern 日期格式
      * @param date    日期字符串
+     * @param pattern 日期格式
      * @return 日期实例
      */
-    public static LocalDate parseDate(String pattern, String date) {
+    public static LocalDate parseDate(String date, String pattern) {
         return LocalDate.parse(date, DateTimeFormatter.ofPattern(pattern));
     }
 
