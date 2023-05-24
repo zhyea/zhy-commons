@@ -16,6 +16,7 @@ public final class CharacterChecker {
      *
      * @param str 待校验字符串
      * @return true 包含中文， false 不包含中文
+     * @throws UnsupportedEncodingException 编码错误异常
      */
     public static boolean containsChineseByGbkCharset(String str) throws UnsupportedEncodingException {
         if (null == str || str.length() == 0) {

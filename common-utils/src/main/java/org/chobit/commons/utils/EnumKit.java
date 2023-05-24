@@ -7,7 +7,7 @@ import org.chobit.commons.contract.CodeEnum;
 /**
  * 枚举工具类
  * <p>
- * 主要用来处理继承了{@see org.chobit.common.base.CodeEnum}和{@see org.chobit.common.base.CodeDescEnum}接口的枚举
+ * 主要用来处理继承了{@link org.chobit.commons.contract.CodeEnum}和{@link org.chobit.commons.contract.CodeDescEnum}接口的枚举
  *
  * @author robin
  */
@@ -62,8 +62,9 @@ public final class EnumKit {
     /**
      * 根据code获取枚举值
      *
-     * @param code 枚举对应code值
-     * @param <T>  枚举类型实例
+     * @param enumType 枚举类型
+     * @param code     枚举对应code值
+     * @param <T>      枚举类型实例
      * @return 枚举值
      */
     public static <T extends Enum<?> & CodeEnum> T codeOf(Class<T> enumType, int code) {
