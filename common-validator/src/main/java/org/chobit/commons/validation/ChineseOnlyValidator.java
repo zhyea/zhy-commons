@@ -22,7 +22,7 @@ public class ChineseOnlyValidator implements ConstraintValidator<ChineseOnly, St
     public boolean isValid(String value, ConstraintValidatorContext context) {
 
         if (null == value) {
-            return false;
+            return true;
         }
 
         return CharacterChecker.isChineseOnly(value, this.allowPunctuation);

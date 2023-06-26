@@ -22,7 +22,7 @@ public class CommonPatternValidator implements ConstraintValidator<CommonPattern
     public boolean isValid(String value, ConstraintValidatorContext context) {
 
         if (null == value) {
-            return false;
+            return true;
         }
 
         return this.regexPattern.pattern.matcher(value).matches();
