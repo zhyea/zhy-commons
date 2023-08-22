@@ -3,7 +3,8 @@ package org.chobit.commons.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.chobit.commons.utils.CharacterChecker;
+
+import static org.chobit.commons.enums.CommonRegexPattern.EMOJI;
 
 /**
  * @author robin
@@ -18,7 +19,7 @@ public class NoEmojiValidator implements ConstraintValidator<NoEmoji, String> {
             return true;
         }
 
-        return !CharacterChecker.containsEmoji(value);
+        return !EMOJI.matches(value);
     }
 
 

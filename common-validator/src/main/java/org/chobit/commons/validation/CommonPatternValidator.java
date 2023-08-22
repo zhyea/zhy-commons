@@ -25,6 +25,6 @@ public class CommonPatternValidator implements ConstraintValidator<CommonPattern
             return true;
         }
 
-        return this.regexPattern.pattern.matcher(value).matches();
+        return this.regexPattern.matches(value);
     }
 }
