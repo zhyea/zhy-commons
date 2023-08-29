@@ -6,6 +6,8 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.chobit.commons.constans.Symbol.DASHED;
+
 /**
  * 字符串工具类
  *
@@ -62,7 +64,7 @@ public final class StrKit {
      * @return uuid
      */
     public static String uuid() {
-        return UUID.randomUUID().toString().replaceAll("-", "");
+        return UUID.randomUUID().toString().replaceAll(DASHED, "");
     }
 
 
