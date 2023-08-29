@@ -45,6 +45,18 @@ public final class StrKit {
 
 
     /**
+     * 当目标值为空时，取另一个值，用于简化三目运算
+     *
+     * @param value 目标值
+     * @param other 替代值
+     * @return 字符串
+     */
+    public static String blankOr(String value, String other) {
+        return isBlank(value) ? other : value;
+    }
+
+
+    /**
      * 生成uuid
      *
      * @return uuid
