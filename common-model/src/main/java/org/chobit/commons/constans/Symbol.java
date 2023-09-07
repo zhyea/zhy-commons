@@ -97,6 +97,13 @@ public final class Symbol {
      */
     public static final String SHARP = "#";
 
+
+    /**
+     * 字符常量：减号（连接符） {@code '-'}
+     */
+    public static final String DASHED = "-";
+
+
     /**
      * ~ 波浪符
      */

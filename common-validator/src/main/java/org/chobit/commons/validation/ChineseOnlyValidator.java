@@ -5,6 +5,8 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.chobit.commons.utils.CharacterChecker;
 
+import static org.chobit.commons.utils.StrKit.isBlank;
+
 /**
  * @author robin
  */
@@ -21,8 +23,8 @@ public class ChineseOnlyValidator implements ConstraintValidator<ChineseOnly, St
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
 
-        if (null == value) {
-            return false;
+        if (isBlank(value)) {
+            return true;
         }
 
         return CharacterChecker.isChineseOnly(value, this.allowPunctuation);

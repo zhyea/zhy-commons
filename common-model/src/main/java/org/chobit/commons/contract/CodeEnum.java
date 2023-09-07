@@ -15,7 +15,7 @@ public interface CodeEnum {
      *
      * @return code值
      */
-    Integer getCode();
+    int getCode();
 
 
     /**
@@ -28,7 +28,7 @@ public interface CodeEnum {
         if (null == code) {
             return false;
         }
-        return this.getCode().equals(code);
+        return this.getCode() == code;
     }
 
     /**

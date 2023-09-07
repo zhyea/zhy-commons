@@ -76,7 +76,7 @@ public final class EnumKit {
         }
 
         for (T v : values) {
-            if (v.getCode().equals(code)) {
+            if (v.getCode() == code) {
                 return v;
             }
         }
