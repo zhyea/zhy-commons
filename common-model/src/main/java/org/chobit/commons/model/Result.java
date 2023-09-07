@@ -1,5 +1,7 @@
 package org.chobit.commons.model;
 
+import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
+
 /**
  * @author robin
  */
@@ -8,7 +10,7 @@ public class Result<T> {
     /**
      * 状态码
      */
-    private int code = 0;
+    private int code = SUCCESS.code;
 
     /**
      * 返回内容
@@ -31,6 +33,14 @@ public class Result<T> {
     public Result(int code, T data) {
         this.code = code;
         this.data = data;
+    }
+
+    public boolean isSuccess() {
+        return SUCCESS.code == this.code;
+    }
+
+    public boolean isFail() {
+        return SUCCESS.code != this.code;
     }
 
     public int getCode() {
