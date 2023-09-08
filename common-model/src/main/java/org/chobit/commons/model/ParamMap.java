@@ -3,6 +3,8 @@ package org.chobit.commons.model;
 import java.util.LinkedHashMap;
 
 /**
+ * 对于Map的一个封装
+ *
  * @author robin
  */
 public class ParamMap<V> extends LinkedHashMap<String, V> {

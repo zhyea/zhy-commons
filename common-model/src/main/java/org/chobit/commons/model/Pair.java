@@ -14,6 +14,7 @@ public class Pair<K, V> implements Serializable {
      * Key of this <code>Pair</code>.
      */
     private K key;
+
     /**
      * Value of this <code>Pair</code>.
      */

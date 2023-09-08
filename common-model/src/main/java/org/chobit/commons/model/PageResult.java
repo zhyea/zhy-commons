@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author rui.zhang
  */
-public class PageData<T> {
+public class PageResult<T> extends Result<List<T>> {
 
 
     /**
@@ -24,11 +24,6 @@ public class PageData<T> {
      * 每页记录数
      */
     private Integer pageSize = 10;
-
-    /**
-     * 数据
-     */
-    private List<T> data;
 
 
     public Long getTotal() {
@@ -53,13 +48,5 @@ public class PageData<T> {
 
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
-    }
-
-    public List<T> getData() {
-        return data;
-    }
-
-    public void setData(List<T> data) {
-        this.data = data;
     }
 }

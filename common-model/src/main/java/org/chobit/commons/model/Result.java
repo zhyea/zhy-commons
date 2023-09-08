@@ -3,10 +3,12 @@ package org.chobit.commons.model;
 import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
 
 /**
+ * 返回结果封装
+ *
  * @author robin
  */
-
 public class Result<T> {
+
     /**
      * 状态码
      */
