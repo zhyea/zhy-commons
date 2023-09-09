@@ -17,7 +17,7 @@ public class Result<T> {
     /**
      * 返回内容
      */
-    private T data;
+    private T content;
 
     /**
      * 错误信息
@@ -28,13 +28,13 @@ public class Result<T> {
     public Result() {
     }
 
-    public Result(T data) {
-        this.data = data;
+    public Result(T content) {
+        this.content = content;
     }
 
-    public Result(int code, T data) {
+    public Result(int code, T content) {
         this.code = code;
-        this.data = data;
+        this.content = content;
     }
 
     public boolean isSuccess() {
@@ -53,12 +53,12 @@ public class Result<T> {
         this.code = code;
     }
 
-    public T getData() {
-        return this.data;
+    public T getContent() {
+        return this.content;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setContent(T content) {
+        this.content = content;
     }
 
     public String getMsg() {

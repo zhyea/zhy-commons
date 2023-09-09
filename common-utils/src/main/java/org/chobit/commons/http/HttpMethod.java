@@ -21,6 +21,7 @@ public enum HttpMethod {
      * POST请求
      */
     POST_BODY,
-    ;
+
+
 
 }

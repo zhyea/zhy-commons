@@ -9,13 +9,22 @@ import org.chobit.commons.contract.CodeDescEnum;
  */
 public enum CommonStatusCode implements CodeDescEnum {
 
+    /**
+     * 成功
+     */
     SUCCESS(0, "成功"),
+
+    /**
+     * 失败
+     */
+    FAIL(10000, "失败"),
 
     ;
 
     public final int code;
 
     public final String desc;
+
 
     CommonStatusCode(int code, String desc) {
         this.code = code;

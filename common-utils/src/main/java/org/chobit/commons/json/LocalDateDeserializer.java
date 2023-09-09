@@ -1,7 +1,6 @@
 package org.chobit.commons.json;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
@@ -22,7 +21,7 @@ public class LocalDateDeserializer extends JsonDeserializer<LocalDate> {
 
 
     @Override
-    public LocalDate deserialize(JsonParser p, DeserializationContext ctx) throws IOException, JsonProcessingException {
+    public LocalDate deserialize(JsonParser p, DeserializationContext ctx) throws IOException {
         if (p.getCurrentToken() == JsonToken.START_ARRAY) {
             return deserializeFromArray(p);
         }

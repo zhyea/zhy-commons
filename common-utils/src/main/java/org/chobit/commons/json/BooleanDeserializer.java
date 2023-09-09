@@ -1,7 +1,6 @@
 package org.chobit.commons.json;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
@@ -15,7 +14,7 @@ import java.io.IOException;
 public class BooleanDeserializer extends JsonDeserializer<Boolean> {
 
     @Override
-    public Boolean deserialize(JsonParser p, DeserializationContext cxt) throws IOException, JsonProcessingException {
+    public Boolean deserialize(JsonParser p, DeserializationContext cxt) throws IOException {
         String s = p.getText();
         if ("0".equals(s) || "false".equalsIgnoreCase(s)) {
             return false;

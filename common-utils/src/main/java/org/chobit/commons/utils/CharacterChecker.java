@@ -19,7 +19,7 @@ public final class CharacterChecker {
      * @throws UnsupportedEncodingException 编码错误异常
      */
     public static boolean containsChineseByGbkCharset(String str) throws UnsupportedEncodingException {
-        if (null == str || str.length() == 0) {
+        if (null == str || str.isEmpty()) {
             return false;
         }
         return str.length() != str.getBytes("GBK").length;
@@ -37,7 +37,7 @@ public final class CharacterChecker {
      * @return true 包含中文， false 不包含中文
      */
     public static boolean containsChineseByUnicodeRange(String str) {
-        if (null == str || str.length() == 0) {
+        if (null == str || str.isEmpty()) {
             return false;
         }
         return PATTERN_CHINESE_RANGE.matcher(str.trim()).find();
@@ -91,7 +91,7 @@ public final class CharacterChecker {
      * @return true 包含， false 不包含
      */
     public static boolean containsChinese(final String str, boolean checkPunctuation) {
-        if (null == str || str.length() == 0) {
+        if (null == str || str.isEmpty()) {
             return false;
         }
 
@@ -132,7 +132,7 @@ public final class CharacterChecker {
      * @return true 全部都是中文， false 含有非中文字符
      */
     public static boolean isChineseOnly(final String str, boolean allowPunctuation) {
-        if (null == str || str.length() == 0) {
+        if (null == str || str.isEmpty()) {
             return false;
         }
 

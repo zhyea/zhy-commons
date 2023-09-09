@@ -111,7 +111,7 @@ public final class StrKit {
      * @return 是否是整数字符串
      */
     public static boolean isNumeric(String str) {
-        if (str != null && str.length() != 0) {
+        if (str != null && !str.isEmpty()) {
             int l = str.length();
             for (int i = 0; i < l; ++i) {
                 if (!Character.isDigit(str.codePointAt(i))) {

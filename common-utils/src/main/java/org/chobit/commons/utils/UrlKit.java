@@ -59,29 +59,34 @@ public final class UrlKit {
                 return new GetReq(url);
             }
 
-            final String urlPath = url.substring(0, index);
-            final String queryStr = url.substring(index + 1);
-
-            final GetReq req = new GetReq(urlPath);
-            final String[] arr = queryStr.split("&");
-            for (String p : arr) {
-                if (p.contains("=")) {
-                    final int idx = p.indexOf("=");
-                    if (idx == 0) {
-                        continue;
-                    }
-                    final String key = p.substring(0, idx);
-                    final String value = p.length() > idx + 1 ? p.substring(idx + 1) : "";
-                    req.addParam(key, value);
-                } else {
-                    req.addParam(p, "");
-                }
-            }
-            return req;
+            return parse0(url, index);
         } catch (Exception e) {
             logger.error("Parse query params error, src url:[{}]", url, e);
         }
         return null;
+    }
+    
+
+    private static GetReq parse0(String url, int index) {
+        final String urlPath = url.substring(0, index);
+        final String queryStr = url.substring(index + 1);
+
+        final GetReq req = new GetReq(urlPath);
+        final String[] arr = queryStr.split("&");
+        for (String p : arr) {
+            if (p.contains("=")) {
+                final int idx = p.indexOf("=");
+                if (idx == 0) {
+                    continue;
+                }
+                final String key = p.substring(0, idx);
+                final String value = p.length() > idx + 1 ? p.substring(idx + 1) : "";
+                req.addParam(key, value);
+            } else {
+                req.addParam(p, "");
+            }
+        }
+        return req;
     }
 
 
@@ -250,7 +255,7 @@ public final class UrlKit {
             if (null == value) {
                 throw new IllegalArgumentException("参数值不能为空");
             }
-            params.put(name, String.valueOf(value));
+            params.put(name, value);
         }
 
         public void addParams(Map<String, String> params) {
