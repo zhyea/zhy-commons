@@ -20,8 +20,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <slf4j.version>2.0.7</slf4j.version>
-        <junit.version>5.9.3</junit.version>
+        <slf4j.version>2.0.9</slf4j.version>
+        <junit.version>5.10.0</junit.version>
         <fluent-hc.version>4.5.14</fluent-hc.version>
         <jackson.version>2.15.1</jackson.version>
         <jakarta-valid.version>3.0.2</jakarta-valid.version>
