@@ -1,5 +1,7 @@
 package org.chobit.commons.model;
 
+import java.io.Serializable;
+
 import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
 
 /**
@@ -7,7 +9,9 @@ import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
  *
  * @author robin
  */
-public class Result<T> {
+public class Result<T> implements Serializable {
+
+    private static final long serialVersionUID = 2163124098042151465L;
 
     /**
      * 状态码

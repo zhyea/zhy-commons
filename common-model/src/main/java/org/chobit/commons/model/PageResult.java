@@ -10,6 +10,9 @@ import java.util.List;
 public class PageResult<T> extends Result<List<T>> {
 
 
+    private static final long serialVersionUID = -4969393538580809626L;
+
+    
     /**
      * 记录总数
      */

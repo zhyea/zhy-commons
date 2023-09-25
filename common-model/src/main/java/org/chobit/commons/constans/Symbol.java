@@ -99,7 +99,7 @@ public final class Symbol {
 
 
     /**
-     * 字符常量：减号（连接符） {@code '-'}
+     * - 符号
      */
     public static final String DASHED = "-";
 
