@@ -1,4 +1,4 @@
-package org.chobit.commons.model;
+package org.chobit.commons.model.response;
 
 import java.io.Serializable;
 
