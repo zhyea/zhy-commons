@@ -12,7 +12,10 @@ import java.io.Serializable;
  */
 public abstract class AbstractPageRequest implements Serializable {
 
-    
+
+    private static final long serialVersionUID = -5326486960307961945L;
+
+
     /**
      * 页码值
      */

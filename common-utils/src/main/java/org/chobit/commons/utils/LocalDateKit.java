@@ -11,6 +11,8 @@ import java.util.Date;
 import static java.time.temporal.ChronoUnit.DAYS;
 import static java.time.temporal.ChronoUnit.MILLIS;
 import static java.util.Calendar.MILLISECOND;
+import static org.chobit.commons.constans.CommonConstants.COMMON_DATETIME_PATTERN;
+import static org.chobit.commons.constans.CommonConstants.COMMON_DATE_PATTERN;
 
 /**
  * 用来处理LocalDate和LocalDateTime相关的工具包
@@ -19,14 +21,6 @@ import static java.util.Calendar.MILLISECOND;
  */
 public final class LocalDateKit {
 
-    /**
-     * 默认日期格式
-     */
-    public static final String COMMON_DATE_PATTERN = "yyyy-MM-dd";
-    /**
-     * 默认日期时间格式
-     */
-    public static final String COMMON_DATETIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
 
     /**
      * 默认日期格式

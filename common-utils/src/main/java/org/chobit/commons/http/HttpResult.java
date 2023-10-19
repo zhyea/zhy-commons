@@ -2,12 +2,17 @@ package org.chobit.commons.http;
 
 import org.apache.http.HttpStatus;
 
+import java.io.Serializable;
+
 /**
  * Http请求结果封装
  *
  * @author robin
  */
-public class HttpResult {
+public class HttpResult implements Serializable {
+
+    private static final long serialVersionUID = 4535394251892023202L;
+
 
     /**
      * http响应状态码

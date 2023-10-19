@@ -1,9 +1,6 @@
 package org.chobit.commons.utils;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
@@ -16,9 +13,8 @@ import java.util.Properties;
  */
 public final class PropKit {
 
-    private static final Logger logger = LoggerFactory.getLogger(PropKit.class);
 
-    private static final Map<Object, Object> m = new Properties();
+    private static final Map<Object, Object> M = new Properties();
 
     /**
      * 加载配置文件
@@ -31,7 +27,7 @@ public final class PropKit {
         try (InputStream in = PropKit.class.getResourceAsStream(propertyFilePath)) {
             if (null != in) {
                 p.load(in);
-                m.putAll(p);
+                M.putAll(p);
             }
         } catch (IOException e) {
             throw new IllegalArgumentException("Cannot read properties from:" + propertyFilePath, e);
@@ -40,7 +36,7 @@ public final class PropKit {
     }
 
     public static String getProp(String key, String defaultValue) {
-        Object oVal = m.get(key);
+        Object oVal = M.get(key);
         String sVal = (oVal instanceof String) ? (String) oVal : null;
         return (null == sVal) ? defaultValue : sVal;
     }
@@ -50,7 +46,7 @@ public final class PropKit {
     }
 
     public static Object setProp(String key, String value) {
-        return m.put(key, value);
+        return M.put(key, value);
     }
 
     public static Integer getInt(String key, Integer defaultValue) {

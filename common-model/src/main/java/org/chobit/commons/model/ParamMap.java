@@ -10,6 +10,8 @@ import java.util.LinkedHashMap;
 public class ParamMap<V> extends LinkedHashMap<String, V> {
 
 
+    private static final long serialVersionUID = 8435616761630448165L;
+
     public ParamMap() {
     }
 

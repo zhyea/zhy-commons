@@ -9,7 +9,7 @@ import org.chobit.commons.exception.ParamException;
  *
  * @author robin
  */
-public interface CheckableType {
+public interface Checkable {
 
 
     /**

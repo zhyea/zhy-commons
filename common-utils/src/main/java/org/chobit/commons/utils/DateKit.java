@@ -7,8 +7,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static org.chobit.commons.utils.LocalDateKit.COMMON_DATETIME_PATTERN;
-import static org.chobit.commons.utils.LocalDateKit.COMMON_DATE_PATTERN;
+import static org.chobit.commons.constans.CommonConstants.COMMON_DATETIME_PATTERN;
+import static org.chobit.commons.constans.CommonConstants.COMMON_DATE_PATTERN;
+
 
 /**
  * 日期工具类

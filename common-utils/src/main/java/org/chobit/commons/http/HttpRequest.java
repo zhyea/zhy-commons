@@ -5,6 +5,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.chobit.commons.utils.JsonKit;
 import org.chobit.commons.utils.UrlKit;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,9 +16,12 @@ import java.util.Map;
  *
  * @author robin
  */
-public class HttpRequest {
+public class HttpRequest implements Serializable {
 
 
+    private static final long serialVersionUID = 7603023283322050706L;
+
+    
     private HttpMethod method = HttpMethod.GET;
 
     private String url;
