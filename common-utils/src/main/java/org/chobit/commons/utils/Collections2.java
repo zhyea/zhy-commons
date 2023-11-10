@@ -5,6 +5,8 @@ import org.chobit.commons.model.Pair;
 
 import java.util.*;
 
+import static org.chobit.commons.utils.StrKit.isBlank;
+
 /**
  * 集合操作辅助类
  *
@@ -130,10 +132,13 @@ public final class Collections2 {
         }
         StringBuilder builder = new StringBuilder();
         for (T t : coll) {
+            if (null == t || isBlank(t.toString())) {
+                continue;
+            }
             if (builder.length() > 0) {
                 builder.append(separator);
             }
-            builder.append(t.toString());
+            builder.append(t);
         }
         return builder.toString();
     }
