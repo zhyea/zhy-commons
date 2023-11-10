@@ -24,7 +24,7 @@ public abstract class AbstractPageRequest implements Serializable {
 
 
     /**
-     *
+     * 页面长度
      */
     @Max(value = 100, message = "每页最多只能有100行记录")
     @NotNull(message = "每页记录数不能为空")

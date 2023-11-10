@@ -7,6 +7,7 @@ package org.chobit.commons.constans;
  */
 public final class Symbol {
 
+
     /**
      * 逗号
      */
@@ -97,12 +98,10 @@ public final class Symbol {
      */
     public static final String SHARP = "#";
 
-
     /**
      * - 符号
      */
     public static final String DASHED = "-";
-
 
     /**
      * ~ 波浪符
@@ -113,6 +112,7 @@ public final class Symbol {
      * $ 美元符号
      */
     public static final String DOLLAR = "$";
+
 
     private Symbol() {
         throw new UnsupportedOperationException("Private constructor, cannot be accessed.");
