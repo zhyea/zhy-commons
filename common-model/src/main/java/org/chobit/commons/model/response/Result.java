@@ -1,5 +1,7 @@
 package org.chobit.commons.model.response;
 
+import org.chobit.commons.enums.CommonStatusCode;
+
 import java.io.Serializable;
 
 import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
@@ -39,6 +41,10 @@ public class Result<T> implements Serializable {
     public Result(int code, T content) {
         this.code = code;
         this.content = content;
+    }
+
+    public Result(CommonStatusCode status){
+        this.code = status.code;
     }
 
     public boolean isSuccess() {
