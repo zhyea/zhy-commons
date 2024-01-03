@@ -1,6 +1,6 @@
 package org.chobit.commons.model.response;
 
-import org.chobit.commons.enums.CommonStatusCode;
+import org.chobit.commons.contract.CodeDescEnum;
 
 import java.io.Serializable;
 
@@ -18,7 +18,7 @@ public class Result<T> implements Serializable {
     /**
      * 状态码
      */
-    private int code = SUCCESS.code;
+    private int code;
 
     /**
      * 返回内容
@@ -32,19 +32,22 @@ public class Result<T> implements Serializable {
 
 
     public Result() {
+        this.code = SUCCESS.code;
+        this.msg = SUCCESS.msg;
     }
 
     public Result(T content) {
         this.content = content;
     }
 
-    public Result(int code, T content) {
-        this.code = code;
-        this.content = content;
+    public Result(CodeDescEnum code) {
+        this.code = code.getCode();
+        this.msg = code.getDesc();
     }
 
-    public Result(CommonStatusCode status){
-        this.code = status.code;
+    public Result(int code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 
     public boolean isSuccess() {

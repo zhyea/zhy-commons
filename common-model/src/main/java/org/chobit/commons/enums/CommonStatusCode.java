@@ -12,23 +12,23 @@ public enum CommonStatusCode implements CodeDescEnum {
     /**
      * 成功
      */
-    SUCCESS(0, "成功"),
+    SUCCESS(0, "请求成功"),
 
     /**
      * 失败
      */
-    FAIL(10000, "失败"),
+    FAIL(10000, "请求失败"),
 
     ;
 
     public final int code;
 
-    public final String desc;
+    public final String msg;
 
 
     CommonStatusCode(int code, String desc) {
         this.code = code;
-        this.desc = desc;
+        this.msg = desc;
     }
 
 
@@ -40,6 +40,6 @@ public enum CommonStatusCode implements CodeDescEnum {
 
     @Override
     public String getDesc() {
-        return this.desc;
+        return this.msg;
     }
 }
