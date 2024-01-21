@@ -14,7 +14,7 @@
     <groupId>org.chobit.commons</groupId>
     <artifactId>zhy-commons</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,7 +24,7 @@
         <junit.version>5.10.1</junit.version>
         <junit.launcher.version>1.10.1</junit.launcher.version>
         <fluent-hc.version>4.5.14</fluent-hc.version>
-        <jackson.version>2.15.1</jackson.version>
+        <jackson.version>2.16.1</jackson.version>
         <jakarta-valid.version>3.0.2</jakarta-valid.version>
         <commons-codec.version>1.15</commons-codec.version>
     </properties>
