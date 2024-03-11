@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.chobit.commons.constans.Symbol.COMMA;
 import static org.chobit.commons.constans.Symbol.DASHED;
 
 /**
@@ -21,7 +22,7 @@ public final class StrKit {
      * @param str 目标字符串
      * @return 字符串是否为空
      */
-    public static boolean isBlank(String str) {
+    public static boolean isBlank(final String str) {
         int strLen;
         if (str == null || (strLen = str.length()) == 0) {
             return true;
@@ -41,7 +42,7 @@ public final class StrKit {
      * @param str 目标字符串
      * @return 字符串是否不为空
      */
-    public static boolean isNotBlank(String str) {
+    public static boolean isNotBlank(final String str) {
         return !isBlank(str);
     }
 
@@ -53,7 +54,7 @@ public final class StrKit {
      * @param other 替代值
      * @return 字符串
      */
-    public static String blankOr(String value, String other) {
+    public static String blankOr(final String value, final String other) {
         return isBlank(value) ? other : value;
     }
 
@@ -79,7 +80,7 @@ public final class StrKit {
      * @param str 字符串
      * @return 是否是整数字符串
      */
-    public static boolean isInteger(String str) {
+    public static boolean isInteger(final String str) {
         if (isBlank(str)) {
             return false;
         }
@@ -97,7 +98,7 @@ public final class StrKit {
      * @param str 字符串
      * @return 是否是整数字符串
      */
-    public static boolean isDouble(String str) {
+    public static boolean isDouble(final String str) {
         if (isBlank(str)) {
             return false;
         }
@@ -110,7 +111,7 @@ public final class StrKit {
      * @param str 字符串
      * @return 是否是整数字符串
      */
-    public static boolean isNumeric(String str) {
+    public static boolean isNumeric(final String str) {
         if (str != null && !str.isEmpty()) {
             int l = str.length();
             for (int i = 0; i < l; ++i) {
@@ -130,7 +131,7 @@ public final class StrKit {
      * @param str 字符串
      * @return 是否是布尔型字符串
      */
-    public static boolean isBool(String str) {
+    public static boolean isBool(final String str) {
         if (isBlank(str)) {
             return false;
         }
@@ -146,7 +147,7 @@ public final class StrKit {
      * @param <T> 原始对象类型
      * @return 原始对象对应的字符串
      */
-    public static <T> String toStr(T src) {
+    public static <T> String toStr(final T src) {
         if (null == src) {
             return "";
         }
@@ -161,7 +162,7 @@ public final class StrKit {
      * @param value   数值
      * @return 格式化后的数字
      */
-    public static String format(String pattern, double value) {
+    public static String format(final String pattern, final double value) {
         return new DecimalFormat(pattern).format(value);
     }
 
@@ -177,7 +178,7 @@ public final class StrKit {
      * @param str 原始字符串
      * @return 驼峰转下划线后的字符串
      */
-    public static String humpToLine(String str) {
+    public static String humpToLine(final String str) {
         Matcher matcher = PATTERN_UPPER.matcher(str);
         StringBuffer sb = new StringBuffer();
         while (matcher.find()) {
@@ -194,7 +195,7 @@ public final class StrKit {
      * @param str 原始字符串
      * @return 驼峰转下划线后的字符串
      */
-    public static String humpToLine2(String str) {
+    public static String humpToLine2(final String str) {
         return str.replaceAll("[A-Z]", "_$0").toLowerCase();
     }
 
@@ -231,7 +232,7 @@ public final class StrKit {
      * @param regex  正则表达式
      * @return 符合正则表达式的字符串
      */
-    public static String takeSubWithRegex(String source, String regex) {
+    public static String takeSubWithRegex(final String source, final String regex) {
         Pattern pattern = Pattern.compile(regex);
         return takeSubWithPattern(source, pattern);
     }
@@ -244,7 +245,7 @@ public final class StrKit {
      * @param pattern Pattern实例
      * @return 符合正则表达式的字符串
      */
-    public static String takeSubWithPattern(String source, Pattern pattern) {
+    public static String takeSubWithPattern(final String source, final Pattern pattern) {
         Matcher matcher = pattern.matcher(source);
         return takeFromMatcher(matcher);
     }
@@ -256,7 +257,7 @@ public final class StrKit {
      * @param matcher Matcher实例
      * @return Matcher实例匹配到的数据
      */
-    public static String takeFromMatcher(Matcher matcher) {
+    public static String takeFromMatcher(final Matcher matcher) {
         if (matcher.find()) {
             return matcher.group();
         }
@@ -271,7 +272,7 @@ public final class StrKit {
      * @param key key
      * @return 异或运算结果
      */
-    public static byte[] xor(String str, String key) {
+    public static byte[] xor(final String str, final String key) {
         if (isBlank(str) || isBlank(key)) {
             return new byte[]{};
         }
@@ -293,7 +294,7 @@ public final class StrKit {
      * @param args 字符串参数
      * @return 第一个不为空的值
      */
-    public static String coalesce(String... args) {
+    public static String coalesce(final String... args) {
         for (String s : args) {
             if (isNotBlank(s)) {
                 return s;
@@ -310,7 +311,7 @@ public final class StrKit {
      * @param elements  要拼接的元素
      * @return 字符串
      */
-    public static String join(String separator, Object... elements) {
+    public static String join(final String separator, final Object... elements) {
         StringBuilder builder = new StringBuilder();
         for (Object ele : elements) {
             if (builder.length() > 0) {
@@ -323,17 +324,39 @@ public final class StrKit {
 
 
     /**
+     * 以逗号做分隔符拼接字符串
+     *
+     * @param elements 要拼接的元素
+     * @return 字符串
+     */
+    public static String join(final Object... elements) {
+        return join(COMMA, elements);
+    }
+
+
+    /**
      * 字符串切分
      *
      * @param src       原始字符串
      * @param separator 分隔符
      * @return 字符串切分结果
      */
-    public static String[] split(String src, String separator) {
+    public static String[] split(final String src, final String separator) {
         if (isBlank(src)) {
             return new String[]{};
         }
         return src.split(separator);
+    }
+
+
+    /**
+     * 以逗号做分隔符切分字符串
+     *
+     * @param src 原始字符串
+     * @return 字符串切分结果
+     */
+    public static String[] split(final String src) {
+        return split(src, COMMA);
     }
 
 

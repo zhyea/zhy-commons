@@ -29,7 +29,7 @@ public final class Convert {
      * @param s 数值字符串
      * @return 长整型数值
      */
-    public static long toLong(String s) {
+    public static long toLong(final String s) {
         try {
             return Long.parseLong(s.trim());
         } catch (Exception e) {
@@ -44,7 +44,7 @@ public final class Convert {
      * @param s 数值字符串
      * @return 浮点型数值
      */
-    public static double toDouble(String s) {
+    public static double toDouble(final String s) {
         try {
             return Double.parseDouble(s.trim());
         } catch (Exception e) {
@@ -59,7 +59,7 @@ public final class Convert {
      * @param s 布尔值字符串
      * @return 布尔型数值
      */
-    public static boolean toBool(String s) {
+    public static boolean toBool(final String s) {
         try {
             return Boolean.parseBoolean(s.trim());
         } catch (Exception e) {
