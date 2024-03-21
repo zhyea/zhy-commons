@@ -28,6 +28,12 @@ public class TreeNode<T> {
     }
 
 
+    public TreeNode(T value) {
+        this();
+        this.value = value;
+    }
+
+
     public T getValue() {
         return value;
     }
