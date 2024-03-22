@@ -34,6 +34,16 @@ public class TreeNode<T> {
     }
 
 
+    /**
+     * 新增子节点
+     *
+     * @param value 子节点的值
+     */
+    public void addChild(T value) {
+        this.children.add(new TreeNode<>(value));
+    }
+
+
     public T getValue() {
         return value;
     }
