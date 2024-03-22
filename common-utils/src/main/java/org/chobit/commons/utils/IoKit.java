@@ -7,6 +7,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static org.chobit.commons.constans.Symbol.EMPTY;
+
 /**
  * IO操作类
  *
@@ -55,7 +57,7 @@ public final class IoKit {
         } catch (IOException e) {
             logger.error("read txt file failed. path:{}", path, e);
         }
-        return "";
+        return EMPTY;
     }
 
 
