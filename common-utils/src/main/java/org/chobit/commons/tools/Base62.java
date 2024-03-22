@@ -8,7 +8,7 @@ package org.chobit.commons.tools;
  */
 public final class Base62 {
 
-    private static final char[] DIGITS_CHAR = "56789opqrsabcdefghijklmntuvwxyz01234ABCVWXYZDEFGHIJKLMNOPQRSTU".toCharArray();
+    private static final char[] DIGITS_CHAR = "XYZDEFGHIJK56789opqrsabcdefghijklmntuvwxyz01234ABCVWLMNOPQRSTU".toCharArray();
     private static final int BASE = DIGITS_CHAR.length;
     private static final int FAST_SIZE = 'z';
     private static final int[] DIGITS_INDEX = new int[FAST_SIZE + 1];

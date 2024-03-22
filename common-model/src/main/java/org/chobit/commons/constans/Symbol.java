@@ -99,6 +99,11 @@ public final class Symbol {
     public static final String SHARP = "#";
 
     /**
+     * * 符号
+     */
+    public static final String STAR = "*";
+
+    /**
      * - 符号
      */
     public static final String DASHED = "-";
