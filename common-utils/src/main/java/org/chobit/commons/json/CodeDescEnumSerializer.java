@@ -11,6 +11,8 @@ import org.chobit.commons.json.annotation.CodeDescSerialize;
 
 import java.io.IOException;
 
+import static org.chobit.commons.constans.Symbol.DASHED;
+
 /**
  * CodeDescEnum
  *
@@ -27,7 +29,6 @@ public class CodeDescEnumSerializer extends JsonSerializer<CodeDescEnum> impleme
      * 是否展示desc
      */
     private boolean showDesc = false;
-
 
 
     @Override
@@ -52,7 +53,7 @@ public class CodeDescEnumSerializer extends JsonSerializer<CodeDescEnum> impleme
             return null;
         }
         if (showCode && showDesc) {
-            return value.getCode() + "-" + value.getDesc();
+            return value.getCode() + DASHED + value.getDesc();
         }
         if (showCode) {
             return value.getCode();
