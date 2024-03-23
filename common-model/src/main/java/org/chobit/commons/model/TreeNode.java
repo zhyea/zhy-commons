@@ -44,6 +44,16 @@ public class TreeNode<T> {
     }
 
 
+    /**
+     * 判断子节点长度
+     *
+     * @return 子节点数量
+     */
+    public int childrenNum() {
+        return this.children.size();
+    }
+
+
     public T getValue() {
         return value;
     }
