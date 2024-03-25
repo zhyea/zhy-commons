@@ -57,6 +57,16 @@ public class TreeNode<T> {
 
 
     /**
+     * 新增子节点
+     *
+     * @param child 子节点
+     */
+    public void addChild(TreeNode<T> child) {
+        this.children.add(child);
+    }
+
+
+    /**
      * 判断子节点长度
      *
      * @return 子节点数量
