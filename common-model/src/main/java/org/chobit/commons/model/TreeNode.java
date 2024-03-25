@@ -2,6 +2,7 @@ package org.chobit.commons.model;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 树节点
@@ -15,6 +16,11 @@ public class TreeNode<T> {
      * 当前节点的值
      */
     private T value;
+
+    /**
+     * 上级节点的引用
+     */
+    private TreeNode<T> parent;
 
 
     /**
@@ -31,6 +37,12 @@ public class TreeNode<T> {
     public TreeNode(T value) {
         this();
         this.value = value;
+    }
+
+
+    public TreeNode(TreeNode<T> parent, T value) {
+        this(value);
+        this.parent = parent;
     }
 
 
@@ -58,11 +70,48 @@ public class TreeNode<T> {
         return value;
     }
 
+
     public void setValue(T value) {
         this.value = value;
     }
 
+
+    public TreeNode<T> getParent() {
+        return parent;
+    }
+
+
+    public void setParent(TreeNode<T> parent) {
+        this.parent = parent;
+    }
+
+
     public List<TreeNode<T>> getChildren() {
         return children;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        TreeNode<?> treeNode = (TreeNode<?>) o;
+        return Objects.equals(value, treeNode.value) && Objects.equals(parent, treeNode.parent) && Objects.equals(children, treeNode.children);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, parent, children);
+    }
+
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "value=" + value +
+                '}';
     }
 }

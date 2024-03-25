@@ -1,5 +1,7 @@
 package org.chobit.commons.model;
 
+import java.util.Objects;
+
 /**
  * 引用信息包装类
  * <p>
@@ -30,5 +32,28 @@ public class Reference<T> {
 
     public void set(T value) {
         this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Reference<?> reference = (Reference<?>) o;
+        return Objects.equals(value, reference.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Reference(" + value + ')';
     }
 }
