@@ -76,6 +76,18 @@ public class TreeNode<T> {
     }
 
 
+    /**
+     * 获取parent node的引用
+     * <p>
+     * 不用getParent()这样的命名是为了避免在序列化处理时出现死循环
+     *
+     * @return parent节点的引用
+     */
+    public TreeNode<T> parent() {
+        return parent;
+    }
+
+
     public T getValue() {
         return value;
     }
@@ -83,11 +95,6 @@ public class TreeNode<T> {
 
     public void setValue(T value) {
         this.value = value;
-    }
-
-
-    public TreeNode<T> getParent() {
-        return parent;
     }
 
 
