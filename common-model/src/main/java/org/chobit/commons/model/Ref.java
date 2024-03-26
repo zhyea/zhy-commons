@@ -3,13 +3,13 @@ package org.chobit.commons.model;
 import java.util.Objects;
 
 /**
- * 引用信息包装类
+ * 引用对象包装类
  * <p>
  * 用于处理直接类型或字符串，以解决直接类型或字符串被修改后引用丢失的问题
  *
  * @author robin
  */
-public class Reference<T> {
+public class Ref<T> {
 
 
     /**
@@ -18,11 +18,11 @@ public class Reference<T> {
     private T value;
 
 
-    public Reference() {
+    public Ref() {
         this.value = null;
     }
 
-    public Reference(T value) {
+    public Ref(T value) {
         this.value = value;
     }
 
@@ -42,7 +42,7 @@ public class Reference<T> {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Reference<?> reference = (Reference<?>) o;
+        Ref<?> reference = (Ref<?>) o;
         return Objects.equals(value, reference.value);
     }
 
