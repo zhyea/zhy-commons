@@ -127,8 +127,6 @@ public class TreeNode<T> {
 
     @Override
     public String toString() {
-        return "TreeNode{" +
-                "value=" + value +
-                '}';
+        return "TreeNode{value=" + value + '}';
     }
 }
