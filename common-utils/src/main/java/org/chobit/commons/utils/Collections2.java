@@ -25,6 +25,26 @@ public final class Collections2 {
     }
 
     /**
+     * 判断Map是否不为空
+     *
+     * @param map 目标集合
+     * @return Map是否不为空
+     */
+    public static boolean isNotEmpty(Map<?, ?> map) {
+        return !isEmpty(map);
+    }
+
+    /**
+     * 判断集合是否不为空
+     *
+     * @param coll 目标集合
+     * @return 集合是否不为空
+     */
+    public static boolean isNotEmpty(Collection<?> coll) {
+        return !isEmpty(coll);
+    }
+
+    /**
      * 判断Map是否为空
      *
      * @param map 目标集合
