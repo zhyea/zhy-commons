@@ -20,6 +20,7 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
+import org.chobit.commons.utils.JsonKit;
 import org.chobit.commons.utils.StrKit;
 import org.chobit.commons.utils.UrlKit;
 import org.slf4j.Logger;
@@ -233,6 +234,28 @@ public final class HttpClient {
             request.bodyString(body, ContentType.APPLICATION_JSON);
         }
         return executeForStream(request, header, null);
+    }
+
+
+    /**
+     * 执行post请求
+     *
+     * @param url    请求路径
+     * @param header header
+     * @param body   请求体
+     * @param <T>    请求体类型
+     * @return 请求响应信息
+     */
+    public static <T> Response postForResponse(String url, Map<String, String> header, T body) {
+        Request request = Request.Post(url);
+        if (null != body) {
+            request.bodyString(JsonKit.toJson(body), ContentType.APPLICATION_JSON);
+        }
+        try {
+            return execute0(request, header, null);
+        } catch (IOException e) {
+            throw new RuntimeException("Execute common http request error.", e);
+        }
     }
 
 
