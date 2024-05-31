@@ -2,7 +2,7 @@ package org.chobit.commons.constans;
 
 /**
  * 通用常量
- * @author rui.zhang
+ * @author robin
  */
 public final class CommonConstants {
 

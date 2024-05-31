@@ -7,7 +7,7 @@ import static org.chobit.commons.utils.StrKit.isBlank;
 /**
  * 脱敏处理工具类
  *
- * @author rui.zhang
+ * @author robin
  */
 public final class DesensitizeTool {
 

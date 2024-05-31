@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 分页数据
  *
- * @author rui.zhang
+ * @author robin
  */
 public class PageResult<T> extends Result<List<T>> {
 

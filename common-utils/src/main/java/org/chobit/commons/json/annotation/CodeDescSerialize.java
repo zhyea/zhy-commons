@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 /**
  * 对实现CodeDescEnum的注解进行序列化
  *
- * @author rui.zhang
+ * @author robin
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
