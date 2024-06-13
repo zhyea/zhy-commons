@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * 二元元组
  *
- * @author rui.zhang
+ * @author robin
  */
 public class Tuple2<T1, T2> implements Serializable {
 

@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * 二元元组
  *
- * @author rui.zhang
+ * @author robin
  */
 public class Tuple3<T1, T2, T3> {
 

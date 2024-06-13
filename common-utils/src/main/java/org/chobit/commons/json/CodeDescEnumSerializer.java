@@ -16,7 +16,7 @@ import static org.chobit.commons.constans.Symbol.DASHED;
 /**
  * CodeDescEnum
  *
- * @author rui.zhang
+ * @author robin
  */
 public class CodeDescEnumSerializer extends JsonSerializer<CodeDescEnum> implements ContextualSerializer {
 
