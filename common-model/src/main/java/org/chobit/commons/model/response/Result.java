@@ -13,72 +13,68 @@ import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
  */
 public class Result<T> implements Serializable {
 
-    private static final long serialVersionUID = 2163124098042151465L;
+	private static final long serialVersionUID = 2163124098042151465L;
 
-    /**
-     * 状态码
-     */
-    private int code;
+	/**
+	 * 状态码
+	 */
+	private int code;
 
-    /**
-     * 返回内容
-     */
-    private T data;
+	/**
+	 * 返回内容
+	 */
+	private T data;
 
-    /**
-     * 错误信息
-     */
-    private String msg;
+	/**
+	 * 错误信息
+	 */
+	private String msg;
 
 
-    public Result() {
-        this.code = SUCCESS.code;
-        this.msg = SUCCESS.msg;
-    }
+	public Result() {
+		this.code = SUCCESS.code;
+		this.msg = SUCCESS.msg;
+	}
 
-    public Result(T data) {
-        this.data = data;
-    }
+	public Result(int code) {
+		this.code = code;
+	}
 
-    public Result(CodeDescEnum code) {
-        this.code = code.getCode();
-        this.msg = code.getDesc();
-    }
+	public Result(T data) {
+		this.data = data;
+	}
 
-    public Result(int code, String msg) {
-        this.code = code;
-        this.msg = msg;
-    }
+	public Result(int code, T data) {
+		this.code = code;
+		this.data = data;
+	}
 
-    public boolean isSuccess() {
-        return SUCCESS.code == this.code;
-    }
+	public Result(CodeDescEnum code) {
+		this.code = code.getCode();
+		this.msg = code.getDesc();
+	}
 
-    public boolean isFail() {
-        return SUCCESS.code != this.code;
-    }
+	public int getCode() {
+		return this.code;
+	}
 
-    public int getCode() {
-        return this.code;
-    }
+	public void setCode(int code) {
+		this.code = code;
+	}
 
-    public void setCode(int code) {
-        this.code = code;
-    }
+	public T getData() {
+		return this.data;
+	}
 
-    public T getData() {
-        return this.data;
-    }
+	public void setData(T data) {
+		this.data = data;
+	}
 
-    public void setData(T data) {
-        this.data = data;
-    }
+	public String getMsg() {
+		return this.msg;
+	}
 
-    public String getMsg() {
-        return this.msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
 }
