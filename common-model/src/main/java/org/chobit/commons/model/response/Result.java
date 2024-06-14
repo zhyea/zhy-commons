@@ -3,6 +3,7 @@ package org.chobit.commons.model.response;
 import org.chobit.commons.contract.CodeDescEnum;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
 
@@ -12,6 +13,7 @@ import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
  * @author robin
  */
 public class Result<T> implements Serializable {
+
 
 	private static final long serialVersionUID = 2163124098042151465L;
 
@@ -77,5 +79,26 @@ public class Result<T> implements Serializable {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Result<?> result = (Result<?>) o;
+		return code == result.code
+				&& Objects.equals(data, result.data)
+				&& Objects.equals(msg, result.msg);
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(code, data, msg);
 	}
 }

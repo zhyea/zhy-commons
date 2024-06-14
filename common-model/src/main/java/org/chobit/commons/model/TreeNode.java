@@ -116,7 +116,9 @@ public class TreeNode<T> {
             return false;
         }
         TreeNode<?> treeNode = (TreeNode<?>) o;
-        return Objects.equals(value, treeNode.value) && Objects.equals(parent, treeNode.parent) && Objects.equals(children, treeNode.children);
+        return Objects.equals(value, treeNode.value)
+                && Objects.equals(parent, treeNode.parent)
+                && Objects.equals(children, treeNode.children);
     }
 
     @Override

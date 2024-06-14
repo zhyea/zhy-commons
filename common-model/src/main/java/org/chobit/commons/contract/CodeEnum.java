@@ -40,6 +40,4 @@ public interface CodeEnum {
     default boolean isNot(Integer code) {
         return !this.is(code);
     }
-
-
 }
