@@ -41,6 +41,7 @@ public class Result<T> implements Serializable {
 	}
 
 	public Result(T data) {
+		this.code = SUCCESS.code;
 		this.data = data;
 	}
 
