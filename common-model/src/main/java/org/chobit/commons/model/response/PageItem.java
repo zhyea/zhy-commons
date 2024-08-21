@@ -74,7 +74,10 @@ public class PageItem<T> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PageItem<?> pageItem = (PageItem<?>) o;
-        return Objects.equals(total, pageItem.total) && Objects.equals(pageNo, pageItem.pageNo) && Objects.equals(pageSize, pageItem.pageSize) && Objects.equals(data, pageItem.data);
+        return Objects.equals(total, pageItem.total)
+                && Objects.equals(pageNo, pageItem.pageNo)
+                && Objects.equals(pageSize, pageItem.pageSize)
+                && Objects.equals(data, pageItem.data);
     }
 
     @Override

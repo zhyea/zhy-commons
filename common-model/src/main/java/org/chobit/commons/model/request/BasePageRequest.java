@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author robin
  */
-public abstract class AbstractPageRequest implements Serializable {
+public abstract class BasePageRequest implements Serializable {
 
 
     private static final long serialVersionUID = -5326486960307961945L;
