@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.chobit.commons</groupId>
         <artifactId>zhy-commons</artifactId>
-        <version>0.1.3.3</version>
+        <version>0.1.3.4</version>
     </parent>
 
     <artifactId>common-utils</artifactId>

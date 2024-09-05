@@ -15,24 +15,40 @@ public class Ref<T> {
     /**
      * 被包装的值
      */
-    private T value;
+    private final T value;
 
 
-    public Ref() {
-        this.value = null;
-    }
-
-    public Ref(T value) {
+    /**
+     * 私有化构造器
+     *
+     * @param value 需要被引用的值
+     */
+    private Ref(T value) {
         this.value = value;
     }
 
+
+    /**
+     * 获取Ref对象
+     *
+     * @param value 被引用的值
+     * @param <T>   被引用的对象的类型
+     * @return Ref对象
+     */
+    public static <T> Ref<T> of(T value) {
+        return new Ref<>(value);
+    }
+
+
+    /**
+     * 获取被引用的对象
+     *
+     * @return 被引用的对象
+     */
     public T get() {
         return value;
     }
 
-    public void set(T value) {
-        this.value = value;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -54,6 +70,6 @@ public class Ref<T> {
 
     @Override
     public String toString() {
-        return "Reference(" + value + ')';
+        return "Ref(" + value + ')';
     }
 }
