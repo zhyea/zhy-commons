@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * @param <T> 数据类型
  */
-public class PageItem<T> {
+public class PageResult<T> {
 
 
     /**
@@ -36,11 +36,11 @@ public class PageItem<T> {
     private List<T> data;
 
 
-    public PageItem() {
+    public PageResult() {
     }
 
     
-    public PageItem(List<T> data) {
+    public PageResult(List<T> data) {
         this.data = data;
     }
 
@@ -82,7 +82,7 @@ public class PageItem<T> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PageItem<?> pageItem = (PageItem<?>) o;
+        PageResult<?> pageItem = (PageResult<?>) o;
         return Objects.equals(total, pageItem.total)
                 && Objects.equals(pageNo, pageItem.pageNo)
                 && Objects.equals(pageSize, pageItem.pageSize)
