@@ -21,19 +21,28 @@ public class PageItem<T> {
     /**
      * 页码
      */
-    private Integer pageNo = 1;
+    private Integer pageNo;
 
 
     /**
      * 每页记录数
      */
-    private Integer pageSize = 10;
+    private Integer pageSize;
 
 
     /**
      * 数据集
      */
     private List<T> data;
+
+
+    public PageItem() {
+    }
+
+    
+    public PageItem(List<T> data) {
+        this.data = data;
+    }
 
 
     public Long getTotal() {
