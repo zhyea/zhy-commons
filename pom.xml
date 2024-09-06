@@ -41,11 +41,6 @@
                 <artifactId>common-utils</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.chobit.commons</groupId>
-                <artifactId>common-validator</artifactId>
-                <version>${project.version}</version>
-            </dependency>
 
             <dependency>
                 <groupId>org.slf4j</groupId>

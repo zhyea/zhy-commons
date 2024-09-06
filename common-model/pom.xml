@@ -15,8 +15,6 @@
 
     <artifactId>common-model</artifactId>
 
-    <packaging>jar</packaging>
-
     <properties>
     </properties>
 
