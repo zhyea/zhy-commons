@@ -3,6 +3,7 @@ package org.chobit.commons.model.response;
 import org.chobit.commons.contract.CodeDescEnum;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
@@ -31,6 +32,11 @@ public class Result<T> implements Serializable {
      * 错误信息
      */
     private String msg;
+
+    /**
+     * 返回信息标签
+     */
+    private List<String> tags;
 
 
     public Result() {
@@ -81,24 +87,28 @@ public class Result<T> implements Serializable {
         this.msg = msg;
     }
 
+    public List<String> getTags() {
+        return tags;
+    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Result<?> result = (Result<?>) o;
-        return code == result.code
-                && Objects.equals(data, result.data)
-                && Objects.equals(msg, result.msg);
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Result<?> result = (Result<?>) o;
+        return code == result.code
+                && Objects.equals(data, result.data)
+                && Objects.equals(msg, result.msg)
+                && Objects.equals(tags, result.tags);
+    }
+
+    @Override
     public int hashCode() {
-        return Objects.hash(code, data, msg);
+        return Objects.hash(code, data, msg, tags);
     }
 }
