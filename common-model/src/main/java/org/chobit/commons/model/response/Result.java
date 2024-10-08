@@ -3,7 +3,6 @@ package org.chobit.commons.model.response;
 import org.chobit.commons.contract.CodeDescEnum;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Objects;
 
 import static org.chobit.commons.enums.CommonStatusCode.SUCCESS;
@@ -36,7 +35,7 @@ public class Result<T> implements Serializable {
     /**
      * 返回信息标签
      */
-    private String[] tags;
+    private String tags;
 
 
     public Result() {
@@ -87,11 +86,11 @@ public class Result<T> implements Serializable {
         this.msg = msg;
     }
 
-    public String[] getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(String[] tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
@@ -100,14 +99,11 @@ public class Result<T> implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Result<?> result = (Result<?>) o;
-        return code == result.code
-                && Objects.equals(data, result.data)
-                && Objects.equals(msg, result.msg)
-                && Objects.deepEquals(tags, result.tags);
+        return code == result.code && Objects.equals(data, result.data) && Objects.equals(msg, result.msg) && Objects.equals(tags, result.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, data, msg, Arrays.hashCode(tags));
+        return Objects.hash(code, data, msg, tags);
     }
 }

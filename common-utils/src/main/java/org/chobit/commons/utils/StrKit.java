@@ -1,13 +1,15 @@
 package org.chobit.commons.utils;
 
+import org.chobit.commons.constans.SymbolChar;
+
 import java.text.DecimalFormat;
+import java.util.Collection;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.chobit.commons.constans.Symbol.COMMA;
-import static org.chobit.commons.constans.Symbol.DASHED;
+import static org.chobit.commons.constans.Symbol.*;
 
 /**
  * 字符串工具类
@@ -87,6 +89,7 @@ public final class StrKit {
         return PATTERN_INTEGER.matcher(str.trim()).matches();
     }
 
+
     /**
      * 浮点型判断正则表达式
      */
@@ -104,6 +107,7 @@ public final class StrKit {
         }
         return PATTERN_DOUBLE.matcher(str.trim()).matches();
     }
+
 
     /**
      * 判断字符串是否是数字
@@ -124,6 +128,7 @@ public final class StrKit {
             return false;
         }
     }
+
 
     /**
      * 判断字符串是否是布尔型字符串
@@ -149,7 +154,7 @@ public final class StrKit {
      */
     public static <T> String toStr(final T src) {
         if (null == src) {
-            return "";
+            return EMPTY;
         }
         return String.valueOf(src);
     }
@@ -311,7 +316,7 @@ public final class StrKit {
      * @param elements  要拼接的元素
      * @return 字符串
      */
-    public static String join(final String separator, final Object... elements) {
+    public static String join(final char separator, final String... elements) {
         StringBuilder builder = new StringBuilder();
         for (Object ele : elements) {
             if (builder.length() > 0) {
@@ -329,8 +334,25 @@ public final class StrKit {
      * @param elements 要拼接的元素
      * @return 字符串
      */
-    public static String join(final Object... elements) {
-        return join(COMMA, elements);
+    public static String join(final String... elements) {
+        return join(SymbolChar.COMMA, elements);
+    }
+
+
+    /**
+     * 实现字符串拼接
+     *
+     * @param elements 要拼接的元素
+     * @return 拼接后的字符串
+     */
+    public static String join(final Collection<String> elements) {
+        if (Collections2.isEmpty(elements)) {
+            return EMPTY;
+        }
+
+        String[] arr = elements.toArray(new String[0]);
+
+        return join(arr);
     }
 
 
