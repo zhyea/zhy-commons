@@ -3,7 +3,7 @@ package org.chobit.commons.constans;
 /**
  * 符号标记
  *
- * @author zhangrui137
+ * @author robin
  */
 public final class Symbol {
 
