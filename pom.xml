@@ -14,7 +14,7 @@
     <groupId>org.chobit.commons</groupId>
     <artifactId>zhy-commons</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.3.5-SNAPSHOT</version>
+    <version>0.1.3.5</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -113,5 +113,13 @@
         <module>common-utils</module>
         <module>common-validator</module>
     </modules>
+
+
+    <scm>
+        <connection>scm:git:git@github.com:zhyea/zhy-commons.git</connection>
+        <developerConnection>scm:git:git@github.com:zhyea/zhy-commons.git</developerConnection>
+        <url>https://github.com/zhyea/zhy-commons</url>
+        <tag>zhy-commons</tag>
+    </scm>
 
 </project>
