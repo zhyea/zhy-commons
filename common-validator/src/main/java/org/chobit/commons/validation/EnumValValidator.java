@@ -11,7 +11,7 @@ import org.chobit.commons.utils.EnumKit;
  *
  * @author robin
  */
-public class EnumValueValidator implements ConstraintValidator<EnumValue, Integer> {
+public class EnumValValidator implements ConstraintValidator<EnumVal, Integer> {
 
 
     /**
@@ -26,7 +26,7 @@ public class EnumValueValidator implements ConstraintValidator<EnumValue, Intege
 
 
     @Override
-    public void initialize(EnumValue enumVal) {
+    public void initialize(EnumVal enumVal) {
         this.enumClass = enumVal.enumClass();
         if (!CodeEnum.class.isAssignableFrom(this.enumClass)) {
             throw new IllegalArgumentException(this.enumClass + "不是继承自BaseEnum");

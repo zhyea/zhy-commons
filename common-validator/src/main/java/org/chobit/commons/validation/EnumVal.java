@@ -13,11 +13,11 @@ import java.lang.annotation.*;
  */
 @Documented
 @Constraint(
-        validatedBy = {EnumValueValidator.class}
+        validatedBy = {EnumValValidator.class}
 )
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface EnumValue {
+public @interface EnumVal {
 
 
     Class<?>[] groups() default {};
