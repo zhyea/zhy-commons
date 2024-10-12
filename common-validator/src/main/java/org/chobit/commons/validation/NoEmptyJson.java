@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 /**
  * 枚举值验证注解
  *
- * @author baifeng.sun
+ * @author robin
  */
 @Documented
 @Constraint(
