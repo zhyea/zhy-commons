@@ -4,6 +4,9 @@ package org.chobit.commons.utils;
 import org.chobit.commons.contract.CodeDescEnum;
 import org.chobit.commons.contract.CodeEnum;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 枚举工具类
  * <p>
@@ -56,6 +59,36 @@ public final class EnumKit {
         }
 
         return null;
+    }
+
+
+    /**
+     * 将枚举类型转换为Map
+     *
+     * @param enumType 枚举类
+     * @param excludes 需要排除的code值
+     * @param <T>      枚举类型
+     * @return CodeDescEnum 对应的 Map
+     */
+    public static <T extends Enum<?> & CodeDescEnum> Map<Integer, String> mapOf(Class<T> enumType, int... excludes) {
+
+        T[] values = enumType.getEnumConstants();
+
+        if (null == values) {
+            return new HashMap<>(0);
+        }
+
+        Map<Integer, String> map = new HashMap<>(values.length);
+
+        for (T v : values) {
+            map.put(v.getCode(), v.getDesc());
+        }
+
+        for (int code : excludes) {
+            map.remove(code);
+        }
+
+        return map;
     }
 
 
