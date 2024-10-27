@@ -1,8 +1,8 @@
 package org.chobit.commons.validation;
 
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 /**
  * 自检验证
@@ -12,8 +12,8 @@ import jakarta.validation.ConstraintValidatorContext;
 public class SelfCheckValidator implements ConstraintValidator<SelfCheck, Boolean> {
 
 
-    @Override
-    public boolean isValid(Boolean result, ConstraintValidatorContext context) {
-        return null != result && result;
-    }
+	@Override
+	public boolean isValid(Boolean result, ConstraintValidatorContext context) {
+		return null != result && result;
+	}
 }

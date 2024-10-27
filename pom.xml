@@ -25,7 +25,7 @@
         <junit.launcher.version>1.10.1</junit.launcher.version>
         <fluent-hc.version>4.5.14</fluent-hc.version>
         <jackson.version>2.16.1</jackson.version>
-        <jakarta-valid.version>3.0.2</jakarta-valid.version>
+        <jakarta-valid.version>2.0.2</jakarta-valid.version>
         <commons-codec.version>1.15</commons-codec.version>
     </properties>
 

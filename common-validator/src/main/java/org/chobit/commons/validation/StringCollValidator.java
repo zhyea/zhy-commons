@@ -1,9 +1,9 @@
 package org.chobit.commons.validation;
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
 import org.chobit.commons.funcs.Checker;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import java.util.Collection;
 
 /**
@@ -14,32 +14,32 @@ import java.util.Collection;
 public class StringCollValidator implements ConstraintValidator<StringColl, Collection<String>> {
 
 
-    private Checker<String> checker;
+	private Checker<String> checker;
 
-    @Override
-    public void initialize(StringColl anno) {
-        Class<? extends Checker<String>> checkerClass = anno.checker();
-        try {
-            this.checker = checkerClass.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-    }
+	@Override
+	public void initialize(StringColl anno) {
+		Class<? extends Checker<String>> checkerClass = anno.checker();
+		try {
+			this.checker = checkerClass.newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 
-    @Override
-    public boolean isValid(Collection<String> coll, ConstraintValidatorContext context) {
-        if (null == coll || coll.isEmpty()) {
-            return true;
-        }
+	@Override
+	public boolean isValid(Collection<String> coll, ConstraintValidatorContext context) {
+		if (null == coll || coll.isEmpty()) {
+			return true;
+		}
 
-        for (String s : coll) {
-            boolean r = this.checker.check(s);
-            if (!r) {
-                return false;
-            }
-        }
+		for (String s : coll) {
+			boolean r = this.checker.check(s);
+			if (!r) {
+				return false;
+			}
+		}
 
-        return true;
-    }
+		return true;
+	}
 }

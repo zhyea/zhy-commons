@@ -1,8 +1,8 @@
 package org.chobit.commons.validation;
 
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 import static org.chobit.commons.enums.CommonRegexPattern.EMOJI_CONTAINED;
 import static org.chobit.commons.utils.StrKit.isBlank;
@@ -13,15 +13,15 @@ import static org.chobit.commons.utils.StrKit.isBlank;
 public class NoEmojiValidator implements ConstraintValidator<NoEmoji, String> {
 
 
-    @Override
-    public boolean isValid(String value, ConstraintValidatorContext context) {
+	@Override
+	public boolean isValid(String value, ConstraintValidatorContext context) {
 
-        if (isBlank(value)) {
-            return true;
-        }
+		if (isBlank(value)) {
+			return true;
+		}
 
-        return !EMOJI_CONTAINED.matches(value);
-    }
+		return !EMOJI_CONTAINED.matches(value);
+	}
 
 
 }

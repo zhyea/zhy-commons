@@ -1,7 +1,7 @@
 package org.chobit.commons.validation;
 
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
+import javax.validation.Constraint;
+import javax.validation.Payload;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -18,24 +18,24 @@ import static java.lang.annotation.ElementType.TYPE;
  */
 @Documented
 @Constraint(
-        validatedBy = {WholeCheckValidator.class}
+		validatedBy = {WholeCheckValidator.class}
 )
 @Target({TYPE, PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface WholeCheck {
 
 
-    Class<?>[] groups() default {};
+	Class<?>[] groups() default {};
 
 
-    Class<? extends Payload>[] payload() default {};
+	Class<? extends Payload>[] payload() default {};
 
 
-    /**
-     * 提示消息
-     *
-     * @return 提示消息
-     */
-    String message() default "对象校验出错";
+	/**
+	 * 提示消息
+	 *
+	 * @return 提示消息
+	 */
+	String message() default "对象校验出错";
 
 }

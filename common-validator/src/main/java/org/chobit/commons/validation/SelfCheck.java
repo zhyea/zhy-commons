@@ -1,7 +1,7 @@
 package org.chobit.commons.validation;
 
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
+import javax.validation.Constraint;
+import javax.validation.Payload;
 
 import java.lang.annotation.*;
 
@@ -14,24 +14,24 @@ import java.lang.annotation.*;
  */
 @Documented
 @Constraint(
-        validatedBy = {SelfCheckValidator.class}
+		validatedBy = {SelfCheckValidator.class}
 )
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SelfCheck {
 
 
-    Class<?>[] groups() default {};
+	Class<?>[] groups() default {};
 
 
-    Class<? extends Payload>[] payload() default {};
+	Class<? extends Payload>[] payload() default {};
 
 
-    /**
-     * 提示消息
-     *
-     * @return 提示消息
-     */
-    String message() default "无法通过校验";
+	/**
+	 * 提示消息
+	 *
+	 * @return 提示消息
+	 */
+	String message() default "无法通过校验";
 
 }

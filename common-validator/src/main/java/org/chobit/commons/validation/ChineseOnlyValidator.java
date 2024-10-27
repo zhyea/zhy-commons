@@ -1,9 +1,10 @@
 package org.chobit.commons.validation;
 
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
 import org.chobit.commons.utils.CharacterChecker;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 import static org.chobit.commons.utils.StrKit.isBlank;
 
@@ -13,20 +14,20 @@ import static org.chobit.commons.utils.StrKit.isBlank;
 public class ChineseOnlyValidator implements ConstraintValidator<ChineseOnly, String> {
 
 
-    private boolean allowPunctuation;
+	private boolean allowPunctuation;
 
-    @Override
-    public void initialize(ChineseOnly annotation) {
-        this.allowPunctuation = annotation.allowPunctuation();
-    }
+	@Override
+	public void initialize(ChineseOnly annotation) {
+		this.allowPunctuation = annotation.allowPunctuation();
+	}
 
-    @Override
-    public boolean isValid(String value, ConstraintValidatorContext context) {
+	@Override
+	public boolean isValid(String value, ConstraintValidatorContext context) {
 
-        if (isBlank(value)) {
-            return true;
-        }
+		if (isBlank(value)) {
+			return true;
+		}
 
-        return CharacterChecker.isChineseOnly(value, this.allowPunctuation);
-    }
+		return CharacterChecker.isChineseOnly(value, this.allowPunctuation);
+	}
 }

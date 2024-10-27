@@ -1,9 +1,9 @@
 package org.chobit.commons.validation;
 
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
 import org.chobit.commons.enums.CommonRegexPattern;
 
+import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.*;
 
 /**
@@ -13,32 +13,32 @@ import java.lang.annotation.*;
  */
 @Documented
 @Constraint(
-        validatedBy = {CommonPatternValidator.class}
+		validatedBy = {CommonPatternValidator.class}
 )
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CommonPattern {
 
 
-    Class<?>[] groups() default {};
+	Class<?>[] groups() default {};
 
 
-    Class<? extends Payload>[] payload() default {};
+	Class<? extends Payload>[] payload() default {};
 
 
-    /**
-     * 正则表达式
-     *
-     * @return 正则表达式
-     */
-    CommonRegexPattern pattern();
+	/**
+	 * 正则表达式
+	 *
+	 * @return 正则表达式
+	 */
+	CommonRegexPattern pattern();
 
-    /**
-     * 提示消息
-     *
-     * @return 提示消息
-     */
-    String message() default "不能通过正则校验";
+	/**
+	 * 提示消息
+	 *
+	 * @return 提示消息
+	 */
+	String message() default "不能通过正则校验";
 
 
 }
