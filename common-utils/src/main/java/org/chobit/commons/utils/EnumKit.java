@@ -7,6 +7,8 @@ import org.chobit.commons.contract.CodeEnum;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.chobit.commons.constans.Symbol.EMPTY;
+
 /**
  * 枚举工具类
  * <p>
@@ -15,23 +17,6 @@ import java.util.Map;
  * @author robin
  */
 public final class EnumKit {
-
-
-    /**
-     * 获取枚举值code对应的描述
-     *
-     * @param code  枚举值code
-     * @param clazz 枚举类
-     * @return 枚举值对应的desc
-     */
-    public static String descOf(Integer code, Class<? extends Enum<? extends CodeDescEnum>> clazz) {
-        CodeEnum v = enumOf(code, clazz);
-
-        if (v instanceof CodeDescEnum) {
-            return ((CodeDescEnum) v).getDesc();
-        }
-        return null;
-    }
 
 
     /**
@@ -100,7 +85,11 @@ public final class EnumKit {
      * @param <T>      枚举类型实例
      * @return 枚举值
      */
-    public static <T extends Enum<?> & CodeEnum> T codeOf(Class<T> enumType, int code) {
+    public static <T extends Enum<?> & CodeDescEnum> T codeOf(Class<T> enumType, Integer code) {
+
+        if (null == code) {
+            return null;
+        }
 
         T[] values = enumType.getEnumConstants();
 
@@ -115,6 +104,25 @@ public final class EnumKit {
         }
 
         return null;
+    }
+
+
+    /**
+     * 获取枚举值code对应的描述
+     *
+     * @param code  枚举值code
+     * @param clazz 枚举类
+     * @return 枚举值对应的desc
+     */
+    public static <T extends Enum<?> & CodeDescEnum> String descOf(Integer code, Class<T> clazz) {
+
+        CodeDescEnum v = codeOf(clazz, code);
+
+        if (null != v) {
+            return v.getDesc();
+        }
+
+        return EMPTY;
     }
 
 
