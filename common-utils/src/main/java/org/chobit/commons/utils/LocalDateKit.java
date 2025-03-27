@@ -79,6 +79,18 @@ public final class LocalDateKit {
 
 
     /**
+     * 根据指定格式解析日期字符串
+     *
+     * @param date      日期字符串
+     * @param formatter 日期格式
+     * @return 日期实例
+     */
+    public static LocalDateTime parseTime(String date, DateTimeFormatter formatter) {
+        return LocalDateTime.parse(date, formatter);
+    }
+
+
+    /**
      * 按默认格式（yyyy-MM-dd）格式化日期实例
      *
      * @param date LocalDate实例
