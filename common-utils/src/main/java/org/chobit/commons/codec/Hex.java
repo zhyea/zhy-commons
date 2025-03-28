@@ -3,51 +3,43 @@ package org.chobit.commons.codec;
 
 public final class Hex {
 
-	/**
-	 * 将字符串转换为16进制数组
-	 *
-	 * @param str 输入字符串
-	 * @return 16进制数组
-	 */
-	public static byte[] toBytes(String str) {
-		if (null == str || str.isEmpty()) {
-			return new byte[0];
-		}
 
-		byte[] bytes = new byte[str.length() * 2];
-		for (int i = 0; i < str.length(); i++) {
-			char c = str.charAt(i);
-			bytes[i * 2] = (byte) (c >> 8);
-			bytes[i * 2 + 1] = (byte) c;
-		}
-		return bytes;
-	}
+    /**
+     * 将字节数组转换为十六进制字符串
+     *
+     * @param bytes 字节数组
+     * @return 字节数组对应的十六进制字符串
+     */
+    public static String toString(byte[] bytes) {
+        StringBuilder hexString = new StringBuilder(2 * bytes.length);
+        for (byte b : bytes) {
+            hexString.append(String.format("%02x", b));
+        }
+        return hexString.toString();
+    }
 
 
-	/**
-	 * 将字节数组转换为16进制字符串
-	 *
-	 * @param bytes 输入字节数组
-	 * @return 16进制字符串
-	 */
-	public static String toString(byte[] bytes) {
-		if (null == bytes) {
-			return "";
-		}
+    /**
+     * 将十六进制字符串转换为字节数组
+     *
+     * @param hexString 十六进制字符串
+     * @return 十六进制字符串对应的字节数组
+     */
+    public static byte[] toBytes(String hexString) {
+        int len = hexString.length();
+        byte[] byteArray = new byte[len / 2];
 
-		StringBuilder builder = new StringBuilder();
-		for (byte b : bytes) {
-			String hex = Integer.toHexString(0xff & b);
-			if (hex.length() == 1) {
-				builder.append('0');
-			}
-			builder.append(hex);
-		}
-		return builder.toString();
-	}
+        for (int i = 0, j = 0; i < len; i += 2, j++) {
+            String byteString = hexString.substring(i, i + 2);
+            byte byteValue = (byte) Integer.parseInt(byteString, 16);
+            byteArray[j] = byteValue;
+        }
+
+        return byteArray;
+    }
 
 
-	private Hex() {
-		throw new UnsupportedOperationException("Private constructor, cannot be accessed.");
-	}
+    private Hex() {
+        throw new UnsupportedOperationException("Private constructor, cannot be accessed.");
+    }
 }
