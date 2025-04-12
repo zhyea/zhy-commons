@@ -4,8 +4,8 @@ package org.chobit.commons.validation;
 import org.chobit.commons.contract.CodeEnum;
 import org.chobit.commons.utils.EnumKit;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 /**
  * 枚举值验证

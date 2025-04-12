@@ -9,37 +9,37 @@ import org.chobit.commons.contract.CodeDescEnum;
  */
 public enum CommonStatusCode implements CodeDescEnum {
 
-    /**
-     * 成功
-     */
-    SUCCESS(0, "请求成功"),
+	/**
+	 * 成功
+	 */
+	SUCCESS(0, "请求成功"),
 
-    /**
-     * 失败
-     */
-    FAIL(10000, "请求失败"),
+	/**
+	 * 失败
+	 */
+	FAIL(10000, "请求失败"),
 
-    ;
+	;
 
-    public final int code;
+	public final int code;
 
-    public final String msg;
-
-
-    CommonStatusCode(int code, String desc) {
-        this.code = code;
-        this.msg = desc;
-    }
+	public final String msg;
 
 
-    @Override
-    public int getCode() {
-        return this.code;
-    }
+	CommonStatusCode(int code, String desc) {
+		this.code = code;
+		this.msg = desc;
+	}
 
 
-    @Override
-    public String getDesc() {
-        return this.msg;
-    }
+	@Override
+	public int getCode() {
+		return this.code;
+	}
+
+
+	@Override
+	public String getDesc() {
+		return this.msg;
+	}
 }

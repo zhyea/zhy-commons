@@ -13,12 +13,12 @@ import java.io.IOException;
  */
 public class BooleanDeserializer extends JsonDeserializer<Boolean> {
 
-    @Override
-    public Boolean deserialize(JsonParser p, DeserializationContext cxt) throws IOException {
-        String s = p.getText();
-        if (String.valueOf(0).equals(s) || String.valueOf(false).equalsIgnoreCase(s)) {
-            return false;
-        }
-        return String.valueOf(1).equals(s) || String.valueOf(true).equalsIgnoreCase(s);
-    }
+	@Override
+	public Boolean deserialize(JsonParser p, DeserializationContext cxt) throws IOException {
+		String s = p.getText();
+		if (String.valueOf(0).equals(s) || String.valueOf(false).equalsIgnoreCase(s)) {
+			return false;
+		}
+		return String.valueOf(1).equals(s) || String.valueOf(true).equalsIgnoreCase(s);
+	}
 }

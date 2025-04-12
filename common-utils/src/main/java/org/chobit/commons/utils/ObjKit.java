@@ -10,20 +10,20 @@ import java.util.Objects;
 public final class ObjKit {
 
 
-    /**
-     * 判断两个对象是否不相等
-     *
-     * @param a 对象a
-     * @param b 对象b
-     * @return true 不相等， false 相等
-     */
-    public static boolean nonEquals(final Object a, final Object b) {
-        return !Objects.equals(a, b);
-    }
+	/**
+	 * 判断两个对象是否不相等
+	 *
+	 * @param a 对象a
+	 * @param b 对象b
+	 * @return true 不相等， false 相等
+	 */
+	public static boolean nonEquals(final Object a, final Object b) {
+		return !Objects.equals(a, b);
+	}
 
 
-    private ObjKit() {
-        throw new UnsupportedOperationException("Private constructor, cannot be accessed.");
-    }
+	private ObjKit() {
+		throw new UnsupportedOperationException("Private constructor, cannot be accessed.");
+	}
 
 }

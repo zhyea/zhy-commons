@@ -3,8 +3,8 @@ package org.chobit.commons.validation;
 
 import org.chobit.commons.utils.CharacterChecker;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 import static org.chobit.commons.utils.StrKit.isBlank;
 

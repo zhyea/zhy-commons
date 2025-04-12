@@ -17,27 +17,27 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class FlashPoint {
 
 
-    private final AtomicBoolean flag = new AtomicBoolean(false);
+	private final AtomicBoolean flag = new AtomicBoolean(false);
 
-    /**
-     * 构造器
-     *
-     * @param period   定期时间间隔
-     * @param timeUnit 间隔单位
-     * @param interval 有效时间窗，单位毫秒
-     */
-    public FlashPoint(long period, TimeUnit timeUnit, long interval) {
-        ScheduledExecutorService executor =
-                new ScheduledThreadPoolExecutor(1, new NamedThreadFactory("flash-point-%d"));
-        executor.scheduleAtFixedRate(() -> {
-            flag.set(true);
-            Threads.sleep(TimeUnit.MILLISECONDS, interval);
-            flag.set(false);
-        }, 0, period, timeUnit);
-    }
+	/**
+	 * 构造器
+	 *
+	 * @param period   定期时间间隔
+	 * @param timeUnit 间隔单位
+	 * @param interval 有效时间窗，单位毫秒
+	 */
+	public FlashPoint(long period, TimeUnit timeUnit, long interval) {
+		ScheduledExecutorService executor =
+				new ScheduledThreadPoolExecutor(1, new NamedThreadFactory("flash-point-%d"));
+		executor.scheduleAtFixedRate(() -> {
+			flag.set(true);
+			Threads.sleep(TimeUnit.MILLISECONDS, interval);
+			flag.set(false);
+		}, 0, period, timeUnit);
+	}
 
-    public boolean get() {
-        return flag.get();
-    }
+	public boolean get() {
+		return flag.get();
+	}
 
 }

@@ -7,21 +7,20 @@ package org.chobit.commons.http;
  */
 public enum HttpMethod {
 
-    /**
-     * GET 请求
-     */
-    GET,
+	/**
+	 * GET 请求
+	 */
+	GET,
 
-    /**
-     * POST请求
-     */
-    POST,
+	/**
+	 * POST请求
+	 */
+	POST,
 
-    /**
-     * POST请求
-     */
-    POST_BODY,
-
+	/**
+	 * POST请求
+	 */
+	POST_BODY,
 
 
 }

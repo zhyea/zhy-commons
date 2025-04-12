@@ -3,8 +3,8 @@ package org.chobit.commons.validation;
 
 import org.chobit.commons.contract.Checkable;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 /**
  * 整体检查验证

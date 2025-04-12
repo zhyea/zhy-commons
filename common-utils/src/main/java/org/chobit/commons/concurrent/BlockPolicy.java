@@ -11,20 +11,20 @@ import java.util.concurrent.TimeUnit;
  */
 public class BlockPolicy implements RejectedExecutionHandler {
 
-    private final long period;
+	private final long period;
 
-    /**
-     * 构造器
-     *
-     * @param period 阻塞等待时长，单位毫秒
-     */
-    public BlockPolicy(long period) {
-        this.period = period;
-    }
+	/**
+	 * 构造器
+	 *
+	 * @param period 阻塞等待时长，单位毫秒
+	 */
+	public BlockPolicy(long period) {
+		this.period = period;
+	}
 
-    @Override
-    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-        Threads.sleep(TimeUnit.MILLISECONDS, period);
-        executor.submit(r);
-    }
+	@Override
+	public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+		Threads.sleep(TimeUnit.MILLISECONDS, period);
+		executor.submit(r);
+	}
 }

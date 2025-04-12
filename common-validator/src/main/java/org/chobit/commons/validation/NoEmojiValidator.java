@@ -1,8 +1,8 @@
 package org.chobit.commons.validation;
 
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 import static org.chobit.commons.enums.CommonRegexPattern.EMOJI_CONTAINED;
 import static org.chobit.commons.utils.StrKit.isBlank;

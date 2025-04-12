@@ -19,120 +19,120 @@ import java.util.Map;
 public class HttpRequest implements Serializable {
 
 
-    private static final long serialVersionUID = 7603023283322050706L;
-
-    
-    private HttpMethod method = HttpMethod.GET;
-
-    private String url;
-
-    private final Map<String, String> headers = new LinkedHashMap<>(4);
-
-    private final Map<String, Object> params = new LinkedHashMap<>(4);
-
-    private String body;
-
-    private String host;
-
-    private int port;
+	private static final long serialVersionUID = 7603023283322050706L;
 
 
-    public HttpRequest() {
-    }
+	private HttpMethod method = HttpMethod.GET;
+
+	private String url;
+
+	private final Map<String, String> headers = new LinkedHashMap<>(4);
+
+	private final Map<String, Object> params = new LinkedHashMap<>(4);
+
+	private String body;
+
+	private String host;
+
+	private int port;
 
 
-    public HttpRequest(HttpMethod method, String url) {
-        this.method = method;
-        this.url = url;
-    }
+	public HttpRequest() {
+	}
 
 
-    public List<NameValuePair> params() {
-        List<NameValuePair> result = new LinkedList<>();
-        for (Map.Entry<String, Object> entry : params.entrySet()) {
-            BasicNameValuePair pair = new BasicNameValuePair(entry.getKey(), String.valueOf(entry.getValue()));
-            result.add(pair);
-        }
-        return result;
-    }
+	public HttpRequest(HttpMethod method, String url) {
+		this.method = method;
+		this.url = url;
+	}
 
 
-    public void addHeaders(Map<String, String> headers) {
-        this.headers.putAll(headers);
-    }
+	public List<NameValuePair> params() {
+		List<NameValuePair> result = new LinkedList<>();
+		for (Map.Entry<String, Object> entry : params.entrySet()) {
+			BasicNameValuePair pair = new BasicNameValuePair(entry.getKey(), String.valueOf(entry.getValue()));
+			result.add(pair);
+		}
+		return result;
+	}
 
 
-    public void addHeader(String name, String value) {
-        this.headers.put(name, value);
-    }
+	public void addHeaders(Map<String, String> headers) {
+		this.headers.putAll(headers);
+	}
 
 
-    public void addParams(Map<String, Object> params) {
-        this.params.putAll(params);
-    }
+	public void addHeader(String name, String value) {
+		this.headers.put(name, value);
+	}
 
 
-    public void addParam(String name, Object value) {
-        this.params.put(name, value);
-    }
+	public void addParams(Map<String, Object> params) {
+		this.params.putAll(params);
+	}
 
 
-    public HttpMethod getMethod() {
-        return method;
-    }
-
-    public void setMethod(HttpMethod method) {
-        this.method = method;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public Map<String, String> getHeaders() {
-        return headers;
-    }
+	public void addParam(String name, Object value) {
+		this.params.put(name, value);
+	}
 
 
-    public Map<String, Object> getParams() {
-        return params;
-    }
+	public HttpMethod getMethod() {
+		return method;
+	}
+
+	public void setMethod(HttpMethod method) {
+		this.method = method;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Map<String, String> getHeaders() {
+		return headers;
+	}
 
 
-    public String getBody() {
-        return body;
-    }
+	public Map<String, Object> getParams() {
+		return params;
+	}
 
-    public void setBody(String body) {
-        this.body = body;
-    }
 
-    public String getHost() {
-        return host;
-    }
+	public String getBody() {
+		return body;
+	}
 
-    public void setHost(String host) {
-        this.host = host;
-    }
+	public void setBody(String body) {
+		this.body = body;
+	}
 
-    public int getPort() {
-        return port;
-    }
+	public String getHost() {
+		return host;
+	}
 
-    public void setPort(int port) {
-        this.port = port;
-    }
+	public void setHost(String host) {
+		this.host = host;
+	}
 
-    @Override
-    public String toString() {
-        if (method == HttpMethod.GET) {
-            return UrlKit.buildQueryStr(this.url, this.params);
-        } else {
-            return JsonKit.toJson(this);
-        }
-    }
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+
+	@Override
+	public String toString() {
+		if (method == HttpMethod.GET) {
+			return UrlKit.buildQueryStr(this.url, this.params);
+		} else {
+			return JsonKit.toJson(this);
+		}
+	}
 }
