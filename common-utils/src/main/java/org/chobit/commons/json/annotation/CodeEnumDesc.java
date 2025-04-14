@@ -24,7 +24,6 @@ import static org.chobit.commons.utils.EnumKit.enumOf2;
  * @author robin
  * @since 2025/4/14 7:51
  */
-
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @JsonSerialize(using = CodeEnumDesc.CodeDescEnumSerializer.class)
