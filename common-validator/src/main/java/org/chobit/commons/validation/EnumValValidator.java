@@ -41,7 +41,7 @@ public class EnumValValidator implements ConstraintValidator<EnumVal, Integer> {
 			return true;
 		}
 
-		if (null != excludeCodes && excludeCodes.length != 0) {
+		if (null != excludeCodes) {
 			for (int code : excludeCodes) {
 				if (code == value) {
 					return false;

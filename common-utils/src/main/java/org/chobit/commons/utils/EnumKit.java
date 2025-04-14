@@ -48,6 +48,34 @@ public final class EnumKit {
 
 
 	/**
+	 * 获取code对应的枚举值
+	 *
+	 * @param code  枚举值code
+	 * @param clazz 枚举类
+	 * @return code对应的枚举值
+	 */
+	public static CodeDescEnum enumOf2(Integer code, Class<? extends Enum<? extends CodeDescEnum>> clazz) {
+		if (null == code) {
+			return null;
+		}
+
+		if (!CodeDescEnum.class.isAssignableFrom(clazz)) {
+			return null;
+		}
+
+		Enum<?>[] values = clazz.getEnumConstants();
+		for (Enum<?> e : values) {
+			CodeDescEnum val = (CodeDescEnum) e;
+			if (code.equals(val.getCode())) {
+				return val;
+			}
+		}
+
+		return null;
+	}
+
+
+	/**
 	 * 将枚举类型转换为Map
 	 *
 	 * @param enumType 枚举类

@@ -11,6 +11,7 @@ public class JsonKitTest {
         Person p = new Person();
         p.setGender(Gender.MALE);
         p.setAge(12);
+        p.setGenderCode(Gender.MALE.code);
 
         String json = JsonKit.toJson(p);
         System.out.println(json);
