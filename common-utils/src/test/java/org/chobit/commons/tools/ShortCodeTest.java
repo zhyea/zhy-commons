@@ -11,17 +11,22 @@ public class ShortCodeTest {
 
 
 	@Test
-	public void genUpper() {
+	public void genUpper() throws InterruptedException {
 		Set<String> set = new HashSet<>(1000);
 		for (int i = 0; i < 1000; i++) {
-			//System.out.println(ShortCode.genUpper());
-			set.add(ShortCode.genUpper());
+			String s = ShortCode.genUpper();
+			System.out.println(s);
+			if (s.length() > 8) {
+				System.out.println("----------------------------------------------");
+			}
+			set.add(s);
+			TimeUnit.MILLISECONDS.sleep(100);
 		}
 		Assertions.assertEquals(1000, set.size());
 	}
 
 
-	//@Test
+	@Test
 	public void genUpperMultiThread() throws InterruptedException {
 		Set<String> set = new HashSet<>(50000);
 
