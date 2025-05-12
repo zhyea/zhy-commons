@@ -48,6 +48,18 @@ public final class IpKit {
 	}
 
 
+	public static String getLocalIp() {
+		try{
+			return InetAddress.getLocalHost().getHostAddress();
+		} catch (Exception e) {
+			return "127.0.0.1";
+		}
+	}
+
+
+
+
+
 	private IpKit() {
 		throw new UnsupportedOperationException("Private constructor, cannot be accessed.");
 	}
